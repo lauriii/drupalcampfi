@@ -1,0 +1,114 @@
+
+// Branding - mobile layout
+
+#section-header {
+  background: url('images/bg-header-phone.jpg') repeat-x 50% 0;
+  height: 585px;
+
+  #zone-branding-wrapper {
+    background: url("images/bg-header-silhouette-2.png") repeat-x center bottom transparent;
+    background-size: 200px auto;
+    height: 100%;
+
+    div.drupal-camp-helsinki-liftup {
+      top: 57px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+
+      div.event-logo {
+        background: transparent url('images/drupal-camp-helsinki.png') no-repeat 0 0;
+        background-size: 235px auto;
+        width: 235px;
+        height: 285px;
+        position: relative;
+        float: none;
+        margin: 0 auto;
+      }
+      h2 {
+        font-family: "MidoMedium","Times New Roman",serif;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.2em;
+        text-align: center;
+        top: 280px;
+        left: 0;
+        width: 100%;
+        color: #00709D;
+        margin: 0;
+        position: absolute;
+
+        sup {
+          font-size: 0.65em;
+          vertical-align: super;
+        }
+      }
+      h1 {
+        color: #fff;
+        font-weight: normal;
+        font-family: "MidoMedium";
+        margin: 0 0 0.5em;
+        line-height: 1em;
+        font-size: 50px;
+        text-align: center;
+        top: 330px;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        .text-shadow(0 -2px 1px #008ebf);
+      }
+      p {
+        color: @white;
+        font-family: "PT Sans","Arial",sans-serif;
+        font-size: 15px;
+        left: 0;
+        position: absolute;
+        top: 410px;
+        width: 100%;
+        text-align: center;
+
+        a.register-button {
+          padding: 10px 20px;
+          display: inline;
+          width: auto;
+          margin-right: 10px;
+          background: fade(@blue-dark, 70%);
+          border: 1px solid fade(@blue-darker, 70%);
+          .border-radius(3px);
+          span {
+            cursor: pointer;
+            display: inline-block;
+            padding: 7px 30px;
+            text-decoration: none;
+            color: #fff;
+            border-top: 1px solid fade(@white, 20%);
+            border-left: 1px solid fade(@white, 20%);
+            .text-shadow(0px 1px 1px #005578);
+
+            &:hover {
+              background-color: fade(@black, 15%);
+            }
+          }
+        }
+
+        span.text {
+          display: block;
+          margin-top: 15px;
+
+          span.arrow-down {
+            background: url('images/button-scroll-down.png') no-repeat 0 0;
+            display: inline-block;
+            height: 30px;
+            position: relative;
+            text-indent: -999em;
+            top: 5px;
+            width: 30px;
+            padding: 10px 0 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+

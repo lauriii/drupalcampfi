@@ -1,0 +1,90 @@
+/**
+ *  This file holds styles for footer
+ */
+
+
+footer.section-footer {
+  .region-footer-first {
+    padding: 40px 0;
+    text-align: center;
+
+    .view-sponsors {
+      margin: 0 auto;
+      .views-row {
+        margin: 0 1.5em 1.5em;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+
+        img {
+          vertical-align: bottom;
+          max-width: 120px;
+          height: auto;
+        }
+      }
+    }
+    h2.block-title {
+      text-align: center;
+      color: #505050;
+      font-size: 40px;
+      font-family: "MidoMedium";
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    h3:first-child {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      a {
+        display: inline-block;
+        padding: 4px 12px;
+        .blue-button(goldenrod);
+
+        &:hover,
+        &:focus {
+          background-color: darken(goldenrod, 10%);
+          border-color: darken(darkgoldenrod, 10%);
+        }
+      }
+    }
+
+    h3 {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      a {
+        display: inline-block;
+        padding: 4px 12px;
+        .blue-button(#c0c0c0);
+
+        &:hover,
+        &:focus {
+          background-color: darken(#c0c0c0, 10%);
+          border-color: darken(lightslategray, 10%);
+        }
+      }
+    }
+  }
+
+  .region-footer-second {
+    .region-inner {
+      padding: 20px 0;
+      border-top: 1px solid #eaeaea;
+
+      .content {
+        text-align: center;
+
+        a {
+          color: #888;
+          padding-right: 20px;
+          font-size: 12px;
+          font-family: 'PT Sans', Arial, sans-serif;
+          text-decoration: none;
+          text-transform: uppercase;
+          &:hover {
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+}

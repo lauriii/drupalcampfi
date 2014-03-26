@@ -1,0 +1,59 @@
+
+// Location
+
+.pane-event-location {
+  .view-header {
+    position: relative;
+    .google-maps-location-druplicon {
+      position: absolute;
+      background: transparent url('images/bg-google-druplicon.png') no-repeat 0 0;
+      right: 111px;
+      top: -21px;
+      width: 200px;
+      padding: 80px 0 0;
+      height: 200px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 18px;
+      line-height: 23px;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+  }
+  .view-content {
+    background-image: url('images/bg-google-map.png');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 595px 342px;
+    display: block;
+    margin: -30px auto 0 auto;
+    padding: 60px 0 60px;
+
+    .gmap {
+      margin: 0 auto;
+    }
+  }
+
+  .responsive-layout-narrow &,
+  .responsive-layout-mobile & {
+    .view-header {
+      .google-maps-location-druplicon {
+        position: static;
+        background: none;
+        right: auto;
+        top: auto;
+        width: auto;
+        padding: 0;
+        height: auto;
+        color: inherit;
+      }
+    }
+  }
+
+  .responsive-layout-mobile & {
+    .view-content {
+      display: none;
+    }
+  }
+}
+

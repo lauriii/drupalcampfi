@@ -1,0 +1,83 @@
+
+// Menu - mobile layout
+
+#zone-menu-wrapper {
+  position: relative;
+  z-index: 1;
+
+  #zone-menu {
+    position: relative;
+    #region-menu {
+      position: absolute;
+      left: 0;
+      border: 1px solid fade(@blue-darker, 70%);
+      top: 0;
+      width: 100%;
+      background: @blue-dark;
+      border-width: 0 0 1px 0;
+      margin: 0;
+      .border-radius(0);
+      .box-shadow(0 1px 3px 0px @black);
+
+      span.showmenu {
+        background-image: url('images/res-menu-icon.png');
+        background-repeat: no-repeat;
+        background-position: 5px 0;
+        display: block;
+        position: relative !important;
+        height: 43px;
+        width: 100%;
+        overflow: hidden;
+
+        &.closed {
+          background-position: 5px 0;
+          &:hover {
+            background-position: 5px -40px;
+            cursor: pointer;
+          }
+        }
+        &.opened {
+          background-position: 5px -80px;
+          &:hover {
+            cursor: pointer;
+            background-position: 5px -120px;
+          }
+        }
+      }
+
+      ul#main-menu {
+        background-color: @blue-dark;
+        border: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100%;
+
+        li {
+          display: block;
+          float: none;
+          clear: both;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          a {
+            padding: 7px 11px;
+            display: block;
+            clear: both;
+            border: none;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            .text-shadow(0px 1px 1px @blue-darker);
+
+            &:hover {
+              background-color: fade(@black, 15%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

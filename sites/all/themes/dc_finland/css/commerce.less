@@ -1,0 +1,38 @@
+/**
+ *  This file holds styles for commerce
+ */
+
+.view-event-registeration {
+  text-align: center;
+
+  .views-field-title {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+  .views-label-add-to-cart-form {
+    display: none;
+  }
+  em { display: none; }
+
+  input.form-submit {
+    .blue-button(@blue);
+
+    font-size: 1.25em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding: 0.75em 3.25em 0.75em 1.25em;
+    background: @blue url("images/add-to-cart.png") no-repeat 95% 50%;
+
+    &:hover,
+    &:focus {
+      background-color: darken(@blue, 5%);
+      border-color: darken(@blue, 10%);
+    }
+  }
+}

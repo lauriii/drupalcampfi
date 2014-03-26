@@ -1,0 +1,88 @@
+// Schedule table
+
+.view-session-schedule-table-3 {
+
+  table {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  tr {
+    border-top: 1px solid #ddd;
+    background: none;
+    padding: 0;
+    td {
+      background: none;
+      padding: 0;
+    }
+    th {
+      padding-left: 0;
+      padding-right: 0;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
+
+  .views-field-view {
+    overflow: hidden;
+    padding: 8px 0;
+
+    article.node-session {
+      float: left;
+      width: 50%;
+      margin-right: -50%;
+
+      .inner {
+        padding-right: 20px;
+      }
+
+      header {
+        font-size: 15px;
+        line-height: 17px;
+        font-weight: bold;
+        a {
+          font-size: 15px;
+          line-height: 17px;
+        }
+      }
+      .field-name-field-experience {
+        margin-top: -3px;
+      }
+    }
+
+    .track-2 {
+      margin-left: 50%;
+    }
+  }
+}
+
+
+// Experience level field
+
+.experience-label {
+  font-size: 13px;
+  line-height: 13px;
+  margin-right: 6px;
+}
+.experience {
+  position: relative;
+  top: 6px;
+
+  display: inline-block;
+  width: 65px;
+  height: 22px;
+  background: url(images/experience-sprite.png) no-repeat;
+
+  &.experience-beginner {
+    background-position: 0 0;
+  }
+  &.experience-intermediate {
+    background-position: 0 -22px;
+  }
+  &.experience-advanced {
+    background-position: 0 -44px;
+  }
+
+}
+

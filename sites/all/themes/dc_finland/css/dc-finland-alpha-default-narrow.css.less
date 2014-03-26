@@ -1,0 +1,136 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+/* If you are using the default media queries provided by Omega, these styles will also
+ *  apply to the normal and widescreen layouts. You may override these styles in the normal 
+ *  and widescreen CSS files as appropriate. */
+
+@import "variables.less";
+
+
+header#section-header {
+  background: #fff url('images/bg-header-tablet.jpg') repeat-x 50% 0;
+  height: 506px;
+
+  #zone-menu-wrapper {
+    #zone-menu {
+      position: relative;
+
+      #region-menu {
+        position: absolute;
+        top: 28px;
+        left: 0;
+        width: 100%;
+        background: fade(@blue-dark, 70%);
+        border: 1px solid fade(@blue-darker, 70%);
+        .border-radius(3px);
+
+        nav.navigation {
+          display: block;
+
+          ul#main-menu {
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 100%;
+            border-top: 1px solid fade(@white, 20%);
+
+            li {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: inline;
+
+              a {
+                display: inline-block;
+                white-space: nowrap;
+                padding: 11px;
+                font-size: 16px;
+                text-decoration: none;
+                color: #fff;
+                border-right: 1px solid @blue-darker;
+                border-left: 1px solid fade(@white, 15%);
+                margin-top: -1px;
+                .text-shadow(0px 1px 1px @blue-darker);
+
+                &:hover {
+                  background-color: fade(@black, 15%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #zone-branding-wrapper {
+    background: url('images/bg-header-silhouette-2.png') repeat-x center bottom transparent;
+    height: 100%;
+
+    div.drupal-camp-helsinki-liftup {
+      left: 0;
+      position: absolute;
+      top: 96px;
+      width: 100%;
+
+      div.event-logo {
+        background: transparent url('images/drupal-camp-helsinki.png') no-repeat 0 0;
+        background-size: 235px auto;
+        width: 235px;
+        height: 322px;
+        top: 30px;
+        right: -7px;
+        position: absolute;
+      }
+
+      div.event-details {
+        text-align: left;
+
+        h2 {
+          font-size: 32px;
+          top: 33px;
+          text-align: left;
+        }
+
+        h1 {
+          font-size: 78px;
+          top: 125px;
+          text-align: left;
+        }
+
+        p {
+          font-size: 20px;
+          top: 230px;
+          text-align: left;
+
+          a.register-button {
+            padding: 10px 20px;
+            display: inline;
+            width: auto;
+            margin-right: 10px;
+          }
+
+          span.arrow-down {
+            background-position: 0px 5px;
+            padding: 13px 0 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+section#section-content {
+  // Carousel
+  .user-carousel {
+    margin: 10px 86px;
+    width: auto;
+  }
+  .view-event-registeration {
+    .views-row {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+

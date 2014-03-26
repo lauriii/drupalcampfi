@@ -1,0 +1,157 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+@import "variables.less";
+@import "menu.less";
+@import "branding.less";
+@import "carousel.less";
+@import "schedule.less";
+@import "location.less";
+@import "news.less";
+@import "user.less";
+@import "commerce.less";
+@import "footer.less";
+
+.sans-serif { font-family: "PT Sans", "Arial", sans-serif; }
+.serif { font-family: "MidoMedium", "Times New Roman", serif; }
+
+// Set basic font
+div.page, p {
+  .sans-serif;
+  font-size: 17px;
+  color: #505050;
+}
+
+h1, h2 {
+  .serif;
+  color: #505050;
+}
+
+h3, h4 {
+  .sans-serif;
+  color: #505050;
+}
+
+
+// Panes
+body {
+  background: #fff url('images/bg-header-phone.jpg') repeat-x 50% 5px;
+
+  &.admin-menu {
+    background-position: 50% 29px;
+  }
+
+  &.front h1#page-title {
+    display: none;
+  }
+
+  #messages {
+    margin: 0 auto;
+    float: none;
+    width: 940px;
+    display: block;
+  }
+
+  section.section-content {
+    background-color: #fff;
+    padding-top: 20px;
+
+    .zone-content,
+    .region-content {
+      .panel-pane {
+
+        padding: 40px 0;
+
+        &.odd { .pane-odd(); }
+        &.even { .pane-even(); }
+
+        .pane-title {
+          text-align: center;
+          color: #505050;
+          font-size: 40px;
+          font-family: "MidoMedium";
+          font-weight: normal;
+          margin-bottom: 30px;
+        }
+
+        &.pane-2 {
+          h2.pane-title {
+            padding-top: 20px;
+          }
+        }
+        &:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden;
+        }
+      }
+      .panel-separator {
+        clear: both;
+      }
+    }
+  }
+
+  // Front
+  &.front {
+    section.section-content {
+      width: 100%;
+
+      .zone-content,
+      .region-content {
+        width: 100%;
+        margin: 0;
+
+        .panel-pane {
+          width: 100%;
+          padding: 40px 0;
+
+          &.odd { .pane-odd(); }
+          &.even { .pane-even(); }
+
+          .pane-title {
+            text-align: center;
+            color: #505050;
+            font-size: 40px;
+            font-family: "MidoMedium";
+            font-weight: normal;
+            margin-bottom: 0px;
+          }
+
+          &.pane-1 {
+            img {
+              max-width: 90%;
+            }
+          }
+          &.pane-2 {
+            h2.pane-title {
+              padding-top: 20px;
+            }
+          }
+          &:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+          }
+        }
+        .panel-separator {
+          clear: both;
+        }
+      }
+    }
+  }
+  &.not-front {
+    footer#section-footer {
+      margin-top: 20px;
+      background-color: #fcfcfc;
+      border-top: 1px solid #eaeaea;
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
+}
+
+
+
