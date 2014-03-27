@@ -2,3 +2,127 @@
 /* If you are using the default media queries provided by Omega, these styles will also
  *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
 
+@import "variables.less";
+
+// Branding - normal layout
+
+header#section-header {
+  background: #fff url('images/bg-header.jpg') repeat-x 50% 0;
+  height: 506px;
+
+  #zone-branding-wrapper {
+    height: 100%;
+    background: url('images/bg-header-silhouette-2.png') repeat-x center bottom;
+
+    div.drupal-camp-helsinki-liftup {
+      position: absolute;
+      top: 96px;
+      left: 0;
+      width: 100%;
+
+      div.event-logo {
+        position: absolute;
+        top: 0px;
+        right: 12px;
+        background: transparent url('images/drupal-camp-helsinki.png') no-repeat 0 0;
+        width: 283px;
+        height: 327px;
+      }
+
+      div.event-details {
+        text-align: left;
+
+        h2 {
+          color: #00709d;
+          font-size: 43px;
+          font-family: "MidoMedium";
+          font-weight: normal;
+          margin: 0;
+          line-height: 1.2em;
+          position: absolute;
+          top: 2px;
+          left: 0px;
+        }
+
+        h1 {
+          position: absolute;
+          top: 114px;
+          left: 0px;
+          color: #fff;
+          font-size: 86px;
+          font-weight: normal;
+          margin: 0;
+          line-height: 1em;
+        }
+
+        p {
+          position: absolute;
+          top: 230px;
+          left: 0px;
+          font-size: 25px;
+          color: @white;
+
+          a.register-button {
+            display: inline-block;
+            background: fade(@blue-dark, 70%);
+            border: 1px solid fade(@blue-darker, 70%);
+            margin-right: 8px;
+            .border-radius(3px);
+            span {
+              cursor: pointer;
+              display: inline-block;
+              padding: 7px 30px;
+              text-decoration: none;
+              color: #fff;
+              border-top: 1px solid fade(@white, 20%);
+              border-left: 1px solid fade(@white, 20%);
+              .text-shadow(0px 1px 1px #005578);
+
+              &:hover {
+                background-color: fade(@black, 15%);
+              }
+
+            }
+          }
+
+          span.arrow-down {
+            padding: 7px 0 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Carousel
+
+section#section-content {
+  background-color: #fff;
+  padding-top: 20px;
+  .user-carousel {
+    margin: 10px 30px;
+    background: #fcfcfc;
+    width: auto;
+  }
+
+  // News listing
+  .news-multi {
+    font-size: 15px;
+    line-height: 20px;
+    color: #888;
+
+    .views-row {
+      float: left;
+      margin: 20px;
+      width: 270px;
+      border: 0 none;
+      text-align: center;
+    }
+  }
+}
+
+#footer#section-footer {
+  .region-footer-first .view-sponsors .views-row img {
+    max-width: 160px;
+  }
+}
