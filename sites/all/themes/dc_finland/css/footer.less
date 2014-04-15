@@ -15,12 +15,11 @@ footer.section-footer {
         text-align: center;
         display: inline-block;
         vertical-align: middle;
-
-        img {
-          vertical-align: bottom;
-          max-width: 120px;
-          height: auto;
-        }
+      }
+      img {
+        vertical-align: bottom;
+        max-width: 120px;
+        height: auto;
       }
     }
     h2.block-title {
@@ -32,19 +31,63 @@ footer.section-footer {
       margin-bottom: 30px;
     }
 
-    h3:first-child {
-      padding-top: 20px;
-      padding-bottom: 10px;
-      a {
-        display: inline-block;
-        padding: 4px 12px;
-        .blue-button(goldenrod);
+    .group-1 {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 1.5em 0;
 
-        &:hover,
-        &:focus {
-          background-color: darken(goldenrod, 10%);
-          border-color: darken(darkgoldenrod, 10%);
+      h3 {
+        a {
+          .blue-button(#000);
+
+          &:hover,
+          &:focus {
+            background-color: lighten(#000, 20%);
+            border-color: lighten(#000,220%);
+          }
         }
+      }
+
+      img {
+        max-width: 160px;
+      }
+    }
+
+    .group-2 {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 1.5em 0;
+
+      h3 {
+        a {
+          .blue-button(#00b2f4);
+
+          &:hover,
+          &:focus {
+            background-color: darken(#00b2f4, 10%);
+            border-color: darken(#00b2f4, 10%);
+          }
+        }
+      }
+      img {
+        max-width: 160px;
+      }
+    }
+
+    .group-3 {
+      h3 {
+        a {
+          .blue-button(goldenrod);
+
+          &:hover,
+          &:focus {
+            background-color: darken(goldenrod, 10%);
+            border-color: darken(darkgoldenrod, 10%);
+          }
+        }
+      }
+      img {
+        max-width: 140px;
       }
     }
 

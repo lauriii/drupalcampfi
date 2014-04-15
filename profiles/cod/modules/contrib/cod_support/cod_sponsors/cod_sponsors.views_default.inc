@@ -22,7 +22,7 @@ function cod_sponsors_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Sponsors';
+  $handler->display->display_options['title'] = '<a id="sponsors">Sponsors</a>';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -31,7 +31,14 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_sponsor_sponsorship_level',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['row_plugin'] = 'fields';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -39,6 +46,14 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'No Sponsors have been added yet.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'sponsorship_level' => 'sponsorship_level',
+    'forums' => 0,
+  );
   /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
@@ -52,6 +67,11 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight_1']['id'] = 'weight_1';
+  $handler->display->display_options['sorts']['weight_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight_1']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight_1']['relationship'] = 'term_node_tid';
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
@@ -120,7 +140,7 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['label'] = '';
   $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['element_class'] = 'title';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['element_class'] = 'title [field_sponsor_sponsorship_level]';
   $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Taxonomy term: Weight */
@@ -151,7 +171,7 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['fields']['field_sponsor_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'large',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -159,8 +179,17 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Sponsorship Level */
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['id'] = 'field_sponsor_sponsorship_level';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['table'] = 'field_data_field_sponsor_sponsorship_level';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['field'] = 'field_sponsor_sponsorship_level';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Sponsorship Level (field_sponsor_sponsorship_level) */
   $handler->display->display_options['arguments']['field_sponsor_sponsorship_level_tid']['id'] = 'field_sponsor_sponsorship_level_tid';
@@ -270,6 +299,18 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['relationships']['field_sponsor_sponsorship_level_tid']['id'] = 'field_sponsor_sponsorship_level_tid';
   $handler->display->display_options['relationships']['field_sponsor_sponsorship_level_tid']['table'] = 'field_data_field_sponsor_sponsorship_level';
   $handler->display->display_options['relationships']['field_sponsor_sponsorship_level_tid']['field'] = 'field_sponsor_sponsorship_level_tid';
+  /* Field: Content: Sponsorship Level */
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['id'] = 'field_sponsor_sponsorship_level';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['table'] = 'field_data_field_sponsor_sponsorship_level';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['field'] = 'field_sponsor_sponsorship_level';
+  $handler->display->display_options['fields']['field_sponsor_sponsorship_level']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Organization';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
@@ -279,13 +320,6 @@ function cod_sponsors_views_default_views() {
     'image_style' => 'thumbnail',
     'image_link' => '',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Organization';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -297,16 +331,11 @@ function cod_sponsors_views_default_views() {
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['relationship'] = 'uid';
-  /* Field: Field: Groups audience */
-  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['table'] = 'field_data_og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['relationship'] = 'field_sponsor_sponsorship_level_tid';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Event(s)';
-  $handler->display->display_options['fields']['og_group_ref']['alter']['nl2br'] = TRUE;
-  $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
-    'link' => 0,
-  );
+  /* Sort criterion: Content: Sponsorship Level (field_sponsor_sponsorship_level) */
+  $handler->display->display_options['sorts']['field_sponsor_sponsorship_level_tid']['id'] = 'field_sponsor_sponsorship_level_tid';
+  $handler->display->display_options['sorts']['field_sponsor_sponsorship_level_tid']['table'] = 'field_data_field_sponsor_sponsorship_level';
+  $handler->display->display_options['sorts']['field_sponsor_sponsorship_level_tid']['field'] = 'field_sponsor_sponsorship_level_tid';
+  $handler->display->display_options['sorts']['field_sponsor_sponsorship_level_tid']['order'] = 'DESC';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
