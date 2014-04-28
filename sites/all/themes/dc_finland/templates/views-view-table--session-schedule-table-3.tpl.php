@@ -28,8 +28,9 @@
         <th></th>
         <th>
           <div class="clearfix">
-            <div style="float: left; width: 50%;">Track 1</div>
-            <div style="float: left; width: 50%;">Track 2</div>
+            <div style="float: left; width: 33%;">Track 1</div>
+            <div style="float: left; width: 33%;">Track 2</div>
+            <div style="float: left; width: 33%;">Track 3</div>
           </div>
         </th>
       </tr>
