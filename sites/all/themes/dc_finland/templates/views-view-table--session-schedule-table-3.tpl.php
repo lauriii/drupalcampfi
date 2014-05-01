@@ -23,14 +23,16 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
   
+    <caption><h3>Friday 23rd</h3></caption>
+
     <thead>
       <tr>
         <th></th>
         <th>
           <div class="clearfix">
-            <div style="float: left; width: 33%;">Track 1</div>
-            <div style="float: left; width: 33%;">Track 2</div>
-            <div style="float: left; width: 33%;">Track 3</div>
+            <div style="float: left; width: 33%;">Drupal 8 (Room: Druid)</div>
+            <div style="float: left; width: 33%;">Front-end (Room: Wunderkraut)</div>
+            <div style="float: left; width: 33%;">Drupal for beginners / Misc (Room: KWD Digital)</div>
           </div>
         </th>
       </tr>
