@@ -32,7 +32,7 @@
           <div class="clearfix">
             <div style="float: left; width: 33%;">Drupal 8 (Room: Druid)</div>
             <div style="float: left; width: 33%;">Front-end (Room: Wunderkraut)</div>
-            <div style="float: left; width: 33%;">Drupal for beginners / Misc (Room: KWD Digital)</div>
+            <div style="float: left; width: 33%;">Drupal for beginners (Room: KWD Digital)</div>
           </div>
         </th>
       </tr>
