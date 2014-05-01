@@ -23,8 +23,6 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
   
-    <caption><h3>Friday 23rd</h3></caption>
-
     <thead>
       <tr>
         <th></th>
